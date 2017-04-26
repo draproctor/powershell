@@ -32,24 +32,24 @@ Function Get-ADName {
       foreach ($User in $SearchObject){
         $ADAccount = Get-ADUser @getaduserSplat |
           Select SamAccountName -First 1
-    	  if (!($ADAccount)){
-    		  Write-Host "$User was not found. Check spelling." -Background Red
-    	  }
-          else {
-    		  $ADAccount
-    	  }
+    	if (!($ADAccount)){
+    	  Write-Host "$User was not found. Check spelling." -Background Red
+    	}
+        else {
+    	  $ADAccount
+    	}
       }
     }
     else {
       foreach ($User in $SearchObject){
         $ADAccount = Get-ADUser @getaduserSplat |
           Select DisplayName,SamAccountName -First 1
-    	  if (!($ADAccount)){
-    		  Write-Host "$User was not found. Check spelling." -Background Red
-    	  }
-          else {
-    		  $ADAccount
-    	  }
+    	if (!($ADAccount)){
+    	  Write-Host "$User was not found. Check spelling." -Background Red
+    	}
+        else {
+    	  $ADAccount
+    	}
       }
     }
   }
