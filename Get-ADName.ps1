@@ -35,7 +35,7 @@ Function Get-ADName {
     	  If (!($ADAccount)){
     		  Write-Host "$User was not found. Check spelling." -Background Red
     	  }
-        Else {
+          Else {
     		  $ADAccount
     	  }
       }
@@ -47,7 +47,7 @@ Function Get-ADName {
     	  If (!($ADAccount)){
     		  Write-Host "$User was not found. Check spelling." -Background Red
     	  }
-        Else {
+          Else {
     		  $ADAccount
     	  }
       }
