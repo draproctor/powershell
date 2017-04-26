@@ -29,25 +29,25 @@ Function Get-ADName {
       'Properties' = '*'
     }
     if ($UsernameOnly){
-      ForEach ($User in $SearchObject){
+      foreach ($User in $SearchObject){
         $ADAccount = Get-ADUser @getaduserSplat |
           Select SamAccountName -First 1
-    	  If (!($ADAccount)){
+    	  if (!($ADAccount)){
     		  Write-Host "$User was not found. Check spelling." -Background Red
     	  }
-          Else {
+          else {
     		  $ADAccount
     	  }
       }
     }
     else {
-      ForEach ($User in $SearchObject){
+      foreach ($User in $SearchObject){
         $ADAccount = Get-ADUser @getaduserSplat |
           Select DisplayName,SamAccountName -First 1
-    	  If (!($ADAccount)){
+    	  if (!($ADAccount)){
     		  Write-Host "$User was not found. Check spelling." -Background Red
     	  }
-          Else {
+          else {
     		  $ADAccount
     	  }
       }
