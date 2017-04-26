@@ -13,8 +13,8 @@ Function Get-ADName {
     .EXAMPLE
     Get-ADName -SearchObject "Austin Proctor"
     Get-ADName "Austin Proctor" -UsernameOnly
-    "Austin Proctor","Scott Mahoney" | Get-ADName
-    "Austin Proctor","Scott Mahoney" | Get-ADName -UsernameOnly
+    "Jane Doe","John Doe" | Get-ADName
+    "Jane Doe","John Doe" | Get-ADName -UsernameOnly
   #>
   [CmdletBinding()]
   Param(
