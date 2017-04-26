@@ -6,13 +6,13 @@ Function Get-UserDLMembership {
   )
 
   forEach ($Member in $User) {
-      Get-ADUser $Member -Property MemberOf |
+    Get-ADUser $Member -Property MemberOf |
       % {
-            $_.MemberOf |
-            Get-ADGroup |
-            where { $_.GroupCategory -like "*stribution*" } |
-            Select Name |
-            Sort Name
+          $_.MemberOf |
+          Get-ADGroup |
+          where { $_.GroupCategory -like "*stribution*" } |
+          Select Name |
+          Sort Name
         }
   }
 }
