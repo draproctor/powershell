@@ -2,15 +2,15 @@ Import-Module Microsoft.PowerShell.Management
 
 function Get-Season {
   [CmdletBinding()]
-  # Fetch the current month
+  # Fetch the current month.
   $date = Get-Date -Format MM
-  # List of months by number for each season
+  # List of months by number for each season.
   $spring = @(3, 4, 5)
   $summer = @(6, 7, 8)
   $fall = @(9, 10, 11)
   $winter = @(12, 1 ,2)
 
-  # Return the season
+  # Return the season.
   switch ($date) {
     {$date -in $spring} {return 'Spring'}
     {$date -in $summer} {return 'Summer'}
@@ -70,7 +70,7 @@ function Get-RandomWallpaper {
     'Winter'
   )
   $wpDir = (Get-ChildItem -Path $path).where{$_.Name -in $seasonNames}
-  # Changing $path to the appropriate season directory
+  # Changing $path to the appropriate season directory.
   $season = Get-Season
   $path = ($wpDir.where{$_.Name -eq $season}).FullName
   $randomWallpaper = Get-ChildItem -Path $path | Get-Random
@@ -84,8 +84,8 @@ function Set-Wallpaper {
     [string]$Path
   )
 
-  # Setting the registry key for the wallpaper
-  # Takes effect at next logon
+  # Setting the registry key for the wallpaper.
+  # Takes effect at next logon.
   $setItemPropertySplat = @{
     Path = 'HKCU:\Control Panel\Desktop\'
     Name = 'WallPaper'
