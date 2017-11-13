@@ -1,3 +1,14 @@
+<#
+This is a function for setting seasonal wallpapers.
+
+The idea is that a user collects wallpapers for each season. Running The
+script once will create four folders in ~/Pictures that the appropriate
+seasonal wallpaper can be placed in.
+
+The script then determines the season, picks the appropriate folder, and
+then pictures a random picture in that folder to be the new background.
+#>
+
 Import-Module Microsoft.PowerShell.Management
 
 function Get-Season {
@@ -61,7 +72,7 @@ function New-WallpaperFolder {
 
 function Get-RandomWallpaper {
   [CmdletBinding()]
-  # Declaring vars
+  # Declaring vars.
   $path = "C:\$env:homepath\Pictures"
   $seasonNames = @(
     'Spring',
