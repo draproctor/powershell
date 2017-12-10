@@ -1,7 +1,8 @@
-Function newdl {
+function New-DLInOu {
   [CmdletBinding()]
+  [Alias('newdl')]
 
-  Param(
+  param(
     [Parameter(Mandatory=$true,Position=0)]
     [System.String]$Name,
     [Parameter(Mandatory=$true,Position=1)]
@@ -10,14 +11,11 @@ Function newdl {
     [System.String[]]$ManagedBy
   )
 
-  process{
-    $NewDLSPlat = @{
-      'Name' = $Name
-      'Alias' = $Alias
-      'OrganizationalUnit' = 'mydomain/distribution groups'
-      'ManagedBy' = @($ManagedBy)
-    }
-
-    New-DistributionGroup @NewDLSplat
+  $newDLSPlat = @{
+    'Name' = $Name
+    'Alias' = $Alias
+    'OrganizationalUnit' = 'mydomain/distribution groups'
+    'ManagedBy' = @($ManagedBy)
   }
+  New-DistributionGroup @newDLSplat
 }

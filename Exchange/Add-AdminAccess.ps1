@@ -1,5 +1,6 @@
 # AAA - add admin access
-Function aaa {
+Function Add-AdminAccess {
+  [Alias('aaa')]
   Param(
     [String]$Identity
   )

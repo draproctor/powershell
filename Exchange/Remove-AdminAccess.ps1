@@ -1,6 +1,7 @@
-# RAA - remove admin access
-Function raa {
-  Param(
+function Remove-AdminAccess {
+  [CmdletBinding()]
+  [Alias('raa')]
+  param(
     [String]$Identity
   )
 

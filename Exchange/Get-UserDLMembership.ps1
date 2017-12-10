@@ -1,16 +1,16 @@
 # KAMBER MADE THIS
 # But I'm adding it to my repo anyway :P
-Function Get-UserDLMembership {
-  Param(
-    [String]$User
+function Get-UserDLMembership {
+  param(
+    [string[]]$User
   )
 
-  forEach ($Member in $User) {
-    Get-ADUser $Member -Property MemberOf |
-      % {
+  foreach ($u in $User) {
+    Get-ADUser $u -Property MemberOf |
+      Foreach-Object {
           $_.MemberOf |
           Get-ADGroup |
-          where { $_.GroupCategory -like "*stribution*" } |
+          Where-Object { $_.GroupCategory -like "*stribution*" } |
           Select Name |
           Sort Name
         }
