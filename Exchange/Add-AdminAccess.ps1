@@ -1,7 +1,7 @@
 # AAA - add admin access
-Function Add-AdminAccess {
+function Add-AdminAccess {
   [Alias('aaa')]
-  Param(
+  param(
     [String]$Identity
   )
 
