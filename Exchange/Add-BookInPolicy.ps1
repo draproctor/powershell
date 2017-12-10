@@ -6,10 +6,10 @@ function Add-BookInPolicy {
     [String[]]$User
   )
 
-  $bookInPolicy = (Get-CalendarProcessing -Identity $Room).BookInPolicy;
-  $bookInPolicy += $User;
+  $bookInPolicy = (Get-CalendarProcessing -Identity $Room).BookInPolicy
+  $bookInPolicy += $User
   Set-CalendarProcessing -Identity $Room -BookInPolicy $bookInPolicy
   foreach ($u in $User){
-    Write-Host "Added $u as a BookInPolicy delegate to ${Room}."
+    Write-Output "Added $u as a BookInPolicy delegate to ${Room}."
   }
 }

@@ -8,7 +8,7 @@ function Add-AdminAccess {
   $aaaSplat = @{
     'Identity' = $Identity
     'AccessRights' = 'FullAccess'
-    'User' = $env:username+'@domain.com'
+    'User' = $env:username + '@domain.com'
     'InheritanceType' = 'All'
     'AutoMapping' = $False
   }

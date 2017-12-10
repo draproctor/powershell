@@ -11,8 +11,8 @@ function Get-UserDLMembership {
           $_.MemberOf |
           Get-ADGroup |
           Where-Object { $_.GroupCategory -like "*stribution*" } |
-          Select Name |
-          Sort Name
+          Select-Object Name |
+          Sort-Object Name
         }
   }
 }
