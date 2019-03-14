@@ -1,5 +1,22 @@
 function Get-ADUserRecursiveReports {
+  <#
+  .SYNOPSIS
+    Pull a list of AD users that all ultimately report to a single manager. This
+    is useful for getting org chart data.
+  .DESCRIPTION
+    Pull a list of AD users that all ultimately report to a single manager. This
+    is useful for getting org chart data.
+  .EXAMPLE
+    PS C:\> Get-ADUserRecursiveReports -Identity jsmith
+    Returns an array of Microsoft.ActiveDirectory.Management.ADAccount objects
+    containing all users that are under jsmith's reporting tree.
+  .INPUTS
+    System.String
+  .OUTPUTS
+    System.Object[]
+  #>
   [CmdletBinding()]
+  [OutputType('System.Object[]')]
   param(
     [Parameter(Mandatory = $true)]
     [string]$Identity
